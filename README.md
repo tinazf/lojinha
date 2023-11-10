@@ -1,2 +1,2 @@
 # lojinha
-Atividade de tópicos
+Valentina Zuliani e Claudia Kussuma
