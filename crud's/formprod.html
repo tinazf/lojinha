@@ -26,13 +26,10 @@
                 <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
             </div>
 
-            <div class="mb-3">
+             <!-- <div class="mb-3">
                 <label for="categoria" class="form-label">Categoria:</label>
                 <select class="form-select" id="categoria" name="categoria_id" required>
-                    <!-- Você precisará popular dinamicamente as opções do menu suspenso com as categorias do banco de dados -->
-                    <!-- Pode fazer isso utilizando um loop PHP -->
                     <?php
-                    // Substitua este exemplo com a lógica para recuperar as categorias do banco de dados
                     $categorias = [
                         ['id' => 1, 'nome' => 'Categoria 1'],
                         ['id' => 2, 'nome' => 'Categoria 2'],
@@ -42,9 +39,9 @@
                     foreach ($categorias as $categoria) {
                         echo "<option value='{$categoria['id']}'>{$categoria['nome']}</option>";
                     }
-                    ?>
+                    ?> 
                 </select>
-            </div>
+            </div>-->
 
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>

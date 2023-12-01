@@ -1,4 +1,5 @@
 <?php
+include 'conexao.php';
 $sql = "SELECT * FROM categorias";
 $result = $conn->query($sql);
 

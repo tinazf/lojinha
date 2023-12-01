@@ -1,4 +1,5 @@
 <?php
+include 'conexao.php';
 $sql = "SELECT * FROM produtos";
 $result = $conn->query($sql);
 
