@@ -26,22 +26,22 @@
                 <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
             </div>
 
-             <!-- <div class="mb-3">
+            <div class="mb-3">
                 <label for="categoria" class="form-label">Categoria:</label>
                 <select class="form-select" id="categoria" name="categoria_id" required>
-                    <?php
+                <php
                     $categorias = [
-                        ['id' => 1, 'nome' => 'Categoria 1'],
-                        ['id' => 2, 'nome' => 'Categoria 2'],
-                        ['id' => 3, 'nome' => 'Categoria 3'],
+                     ['id' => 1, 'nome' => 'Categoria 1'],
+                     ['id' => 2, 'nome' => 'Categoria 2'],
+                     ['id' => 3, 'nome' => 'Categoria 3'],
                     ];
 
                     foreach ($categorias as $categoria) {
-                        echo "<option value='{$categoria['id']}'>{$categoria['nome']}</option>";
+                        echo "<option value= '{$categoria["id"]}'> {$categoria['nome']} </option>";
                     }
                     ?> 
                 </select>
-            </div>-->
+            </div>
 
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
