@@ -66,15 +66,79 @@
                         <p class="nav-link welcome-msg">Bem-vindo, <span id="username">Visitante</span></p>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cadastro</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Cadastro</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Adicione os campos de login aqui -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário:</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha_usuario" class="form-label">Senha:</label>
+                            <input type="password" class="form-control" id="senha_usuario" name="senha_usuario">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Cadastro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Adicione os campos de cadastro aqui -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="nome_usuario" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="nome_usuario" name="nome_usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone:</label>
+                            <input type="tel" class="form-control" id="telefone" name="telefone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha_usuario" class="form-label">Senha:</label>
+                            <input type="password" class="form-control" id="senha_usuario" name="senha_usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirma_senha" class="form-label">Repetir Senha:</label>
+                            <input type="password" class="form-control" id="confirma_senha" name="confirma_senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <h1 class="mb-4">Bem-vindo à Lojinha de Decoração</h1>
@@ -92,6 +156,4 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.
