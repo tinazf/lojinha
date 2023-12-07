@@ -1,5 +1,5 @@
 <?php if (isset($_SESSION['id_usuario'])) { ?>
-    
+    <!--aqui nav com login -->
 <?php }else { ?>
 <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
