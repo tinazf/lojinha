@@ -54,27 +54,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Lojinha</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <p class="nav-link welcome-msg">Bem-vindo, <span id="username">Visitante</span></p>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Cadastro</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
 
     <!-- Modal de Login -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -146,7 +126,7 @@
         <!-- Botões para CRUD de Produtos -->
         <div class="btn-container">
             <a href="readpro.php" class="btn btn-primary">Listar Produtos</a>
-            <a href="formprod.html" class="btn btn-success">Inserir Produto</a>
+            <a href="formprod.php" class="btn btn-success">Inserir Produto</a>
         </div>
 
         <!-- Botões para CRUD de Categorias -->

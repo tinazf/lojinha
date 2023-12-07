@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Executar a query
     if ($conn->query($sql) === TRUE) {
         echo "Produto inserido com sucesso!";
+        header ("Location: readpro.php");
     } else {
         echo "Erro ao inserir produto: " . $conn->error;
     }

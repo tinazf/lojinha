@@ -29,7 +29,7 @@
             <div class="mb-3">
                 <label for="categoria" class="form-label">Categoria:</label>
                 <select class="form-select" id="categoria" name="categoria_id" required>
-                <php
+                <?php
                     $categorias =[
                      ['id' => 1, 'nome' => 'Categoria 1'],
                      ['id' => 2, 'nome' => 'Categoria 2'],
