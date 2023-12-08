@@ -127,7 +127,7 @@
         <!-- Botões para CRUD de Categorias -->
         <div class="btn-container">
             <a href="readcat.php" class="btn btn-primary">Listar Categorias</a>
-            <a href="createcat.php" class="btn btn-success">Inserir Categoria</a>
+            <a href="formcad.php" class="btn btn-success">Inserir Categoria</a>
         </div>
     </div>
     <?php

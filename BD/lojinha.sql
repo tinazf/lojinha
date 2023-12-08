@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 08-Dez-2023 às 02:53
+-- Tempo de geração: 08-Dez-2023 às 11:59
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `categorias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 

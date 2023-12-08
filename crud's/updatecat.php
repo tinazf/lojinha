@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         echo "Categoria atualizada com sucesso!";
+        header("location: readcat.php");
     } else {
         echo "Erro ao atualizar categoria: " . $conn->error;
     }

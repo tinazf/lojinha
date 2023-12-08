@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
         echo '<h5 class="card-title">ID: ' . $row["id"] . '</h5>';
         echo '<p class="card-text">Nome: ' . $row["nome"] . '</p>';
         echo '<p class="card-text">Preço: R$ ' . number_format($row["preco"], 2, ',', '.') . '</p>';
-        echo '<button class="btn btn-primary" onclick="editarProduto(' . $row["id"] . ')">Editar</button>';
+        echo '<button class="btn btn-primary" href="updatepro.php"onclick="editarProduto(' . $row["id"] . ')">Editar</button>';
         echo '<button class="btn btn-danger" onclick="excluirProduto(' . $row["id"] . ')">Excluir</button>';
         echo '</div>';
         echo '</div>';
@@ -45,7 +45,12 @@ if ($result->num_rows > 0) {
     }
 
     function excluirProduto(id) {
-        // Implemente a lógica de exclusão conforme necessário
+        window.location.href = 'deleteprod.php?id=' + id;
+        var confirmacao = confirm('Tem certeza que deseja excluir este produto?');
+        if (confirmacao) {
+            // Adicione a lógica para excluir a categoria
+            alert('Excluir a categoria com ID ' + id);
+        }
         alert('Excluir o produto com ID ' + id);
     }
 </script>

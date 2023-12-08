@@ -17,6 +17,7 @@
                 <label for="nome" class="form-label">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" required>
             </div>
+            <button type="submit" name="cadastrar" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>
 

@@ -3,8 +3,8 @@ $(document).ready(function () {
     // Carregar lista de usuario ao carregar a página
     carregarusuario();
 
-    // Manipular o formulário para inserir produto usando Ajax
-    $('#formProduto').submit(function (event) {
+    // Manipular o formulário para inserir usuario usando Ajax
+    $('#formusuario').submit(function (event) {
         event.preventDefault();
         var formData = $(this).serialize();
 
@@ -43,13 +43,13 @@ $(document).ready(function () {
         var listausuario = $('#listausuario');
         listausuario.empty();
 
-        usuario.forEach(function (produto) {
+        usuario.forEach(function (usuario) {
             var itemLista = $('<li class="list-group-item">' +
-                produto.nome + ' - ' +
-                (produto.descricao ? produto.descricao : 'Sem descrição') +
-                ' - R$ ' + produto.preco.toFixed(2) +
-                ' <button type="button" class="btn btn-warning btn-sm editar" data-id="' + produto.id + '">Editar</button>' +
-                ' <button type="button" class="btn btn-danger btn-sm excluir" data-id="' + produto.id + '">Excluir</button>' +
+                usuario.nome + ' - ' +
+                (usuario.descricao ? usuario.descricao : 'Sem descrição') +
+                ' - R$ ' + usuario.preco.toFixed(2) +
+                ' <button type="button" class="btn btn-warning btn-sm editar" data-id="' + usuario.id + '">Editar</button>' +
+                ' <button type="button" class="btn btn-danger btn-sm excluir" data-id="' + usuario.id + '">Excluir</button>' +
                 '</li>');
             listausuario.append(itemLista);
         });
@@ -57,22 +57,22 @@ $(document).ready(function () {
         // Adicionar eventos de clique para os botões de editar e excluir
         $('.editar').click(function () {
             var id = $(this).data('id');
-            editarProduto(id);
+            editarusuario(id);
         });
 
         $('.excluir').click(function () {
             var id = $(this).data('id');
-            excluirProduto(id);
+            excluirusuario(id);
         });
     }
 
-    // Função para editar um produto
-    function editarProduto(id) {
-        var nome = prompt('Novo nome do produto:');
-        var descricao = prompt('Nova descrição do produto:');
-        var preco = prompt('Novo preço do produto:');
+    // Função para editar um usuario
+    function editarusuario(id) {
+        var nome = prompt('Novo nome do usuario:');
+        var descricao = prompt('Nova descrição do usuario:');
+        var preco = prompt('Novo preço do usuario:');
 
-        // Realizar a requisição PUT para atualizar o produto
+        // Realizar a requisição PUT para atualizar o usuario
         $.ajax({
             type: 'PUT',
             url: 'usuario.php',
@@ -83,15 +83,15 @@ $(document).ready(function () {
             },
             error: function (error) {
                 console.log(error);
-                alert('Erro ao atualizar o produto.');
+                alert('Erro ao atualizar o usuario.');
             }
         });
     }
 
-    // Função para excluir um produto
-    function excluirProduto(id) {
-        if (confirm('Tem certeza que deseja excluir este produto?')) {
-            // Realizar a requisição DELETE para excluir o produto
+    // Função para excluir um usuario
+    function excluirusuario(id) {
+        if (confirm('Tem certeza que deseja excluir este usuario?')) {
+            // Realizar a requisição DELETE para excluir o usuario
             $.ajax({
                 type: 'DELETE',
                 url: 'usuario.php',
@@ -102,7 +102,7 @@ $(document).ready(function () {
                 },
                 error: function (error) {
                     console.log(error);
-                    alert('Erro ao excluir o produto.');
+                    alert('Erro ao excluir o usuario.');
                 }
             });
         }
