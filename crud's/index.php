@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lojinha de Decoração</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <?php
+    include_once('cabecalho.php');
+    ?>
     <style>
         body {
             background-color: #f8f9fa;
@@ -66,11 +69,12 @@
                         <p class="nav-link welcome-msg">Bem-vindo, <span id="username">Visitante</span></p>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                        <a class="nav-link" href="#" data-bs-toggle='modal' data-bs-target='#loginModal'>Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cadastro</a>
+                        <a class="nav-link" href="#" data-bs-toggle='modal' data-bs-target='#cadastroModal'>Cadastro</a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -102,7 +106,7 @@
         </div>
     </div>
 
-    <!-- Modal de Login -->
+    <!-- Modal de Cadastro -->
     <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="cadastroModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -114,7 +118,11 @@
                     <!-- Adicione os campos de login aqui -->
                     <form>
                         <div class="mb-3">
-                            <label for="username" class="form-label">Usuário:</label>
+                            <label for="username" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Email:</label>
                             <input type="text" class="form-control" id="username" name="username">
                         </div>
                         <div class="mb-3">
