@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    // Carregar lista de produtos ao carregar a página
-    carregarProdutos();
+    // Carregar lista de usuario ao carregar a página
+    carregarusuario();
 
     // Manipular o formulário para inserir produto usando Ajax
     $('#formProduto').submit(function (event) {
@@ -9,11 +9,11 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'POST',
-            url: 'produtos.php',
+            url: 'usuario.php',
             data: formData,
             success: function (response) {
                 alert(response.message);
-                carregarProdutos();
+                carregarusuario();
             },
             error: function (error) {
                 console.log(error);
@@ -22,27 +22,27 @@ $(document).ready(function () {
         });
     });
 
-    // Função para carregar a lista de produtos usando Ajax
-    function carregarProdutos() {
+    // Função para carregar a lista de usuario usando Ajax
+    function carregarusuario() {
         $.ajax({
             type: 'GET',
-            url: 'produtos.php',
-            success: function (produtos) {
-                exibirProdutos(produtos);
+            url: 'usuario.php',
+            success: function (usuario) {
+                exibirusuario(usuario);
             },
             error: function (error) {
                 console.log(error);
-                alert('Erro ao carregar a lista de produtos.');
+                alert('Erro ao carregar a lista de usuario.');
             }
         });
     }
 
-    // Função para exibir a lista de produtos no DOM
-    function exibirProdutos(produtos) {
-        var listaProdutos = $('#listaProdutos');
-        listaProdutos.empty();
+    // Função para exibir a lista de usuario no DOM
+    function exibirusuario(usuario) {
+        var listausuario = $('#listausuario');
+        listausuario.empty();
 
-        produtos.forEach(function (produto) {
+        usuario.forEach(function (produto) {
             var itemLista = $('<li class="list-group-item">' +
                 produto.nome + ' - ' +
                 (produto.descricao ? produto.descricao : 'Sem descrição') +
@@ -50,7 +50,7 @@ $(document).ready(function () {
                 ' <button type="button" class="btn btn-warning btn-sm editar" data-id="' + produto.id + '">Editar</button>' +
                 ' <button type="button" class="btn btn-danger btn-sm excluir" data-id="' + produto.id + '">Excluir</button>' +
                 '</li>');
-            listaProdutos.append(itemLista);
+            listausuario.append(itemLista);
         });
 
         // Adicionar eventos de clique para os botões de editar e excluir
@@ -74,11 +74,11 @@ $(document).ready(function () {
         // Realizar a requisição PUT para atualizar o produto
         $.ajax({
             type: 'PUT',
-            url: 'produtos.php',
+            url: 'usuario.php',
             data: {id: id, nome: nome, descricao: descricao, preco: preco},
             success: function (response) {
                 alert(response.message);
-                carregarProdutos();
+                carregarusuario();
             },
             error: function (error) {
                 console.log(error);
@@ -93,11 +93,11 @@ $(document).ready(function () {
             // Realizar a requisição DELETE para excluir o produto
             $.ajax({
                 type: 'DELETE',
-                url: 'produtos.php',
+                url: 'usuario.php',
                 data: {id: id},
                 success: function (response) {
                     alert(response.message);
-                    carregarProdutos();
+                    carregarusuario();
                 },
                 error: function (error) {
                     console.log(error);
