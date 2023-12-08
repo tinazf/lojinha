@@ -134,7 +134,7 @@
         <!-- Botões para CRUD de Produtos -->
         <div class="btn-container">
             <a href="readpro.php" class="btn btn-primary">Listar Produtos</a>
-            <a href="formprod.html" class="btn btn-success">Inserir Produto</a>
+            <a href="formprod.php" class="btn btn-success">Inserir Produto</a>
         </div>
 
         <!-- Botões para CRUD de Categorias -->
