@@ -114,18 +114,22 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="username" class="form-label">Nome:</label>
-                            <input type="text" class="form-control" id="username" name="username">
+                            <label for="nome_usuario" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="nome_usuario" name="nome_usuario">
                         </div>
                         <div class="mb-3">
-                            <label for="username" class="form-label">Email:</label>
-                            <input type="text" class="form-control" id="username" name="username">
+                            <label for="numero_usuario" class="form-label">Numero:</label>
+                            <input type="number" class="form-control" id="numero_usuario" name="numero_usuario">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Senha:</label>
-                            <input type="password" class="form-control" id="password" name="password">
+                            <label for="email_usuario" class="form-label">Email:</label>
+                            <input type="text" class="form-control" id="email_usuario" name="email_usuario">
                         </div>
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <div class="mb-3">
+                            <label for="senha_usuario" class="form-label">Senha:</label>
+                            <input type="password" class="form-control" id="senha_usuario" name="senha_usuario">
+                        </div>
+                        <button type="submit" name="btn-cadastrar" class="btn btn-primary">Cadastrar</button>
                     </form>
                 </div>
             </div>
@@ -147,7 +151,26 @@
             <a href="createcat.php" class="btn btn-success">Inserir Categoria</a>
         </div>
     </div>
+<?php
+include_once('conexao.php');
+    if (isset($_POST['btn-cadastrar'])) :
+	$nome_usuario = $_POST['nome_usuario'];
+	$numero_usuario = $_POST['numero_usuario'];
+    $email_usuario = $_POST['email_usuario'];
+	$senha = $_POST['senha'];
 
+	$sql = "INSERT INTO usuarios (nome_usuario, email, cpf, senha) 
+    VALUES ('$nome_usuario', '$email','$cpf','$senha')";
+
+	if (mysqli_query($connect, $sql)) :
+		$_SESSION['mensagem'] = "Cadastrado com sucesso!";
+		header('Location: ../sessao/login.php');
+	else :
+		$_SESSION['mensagem'] = "Erro ao cadastrar";
+		header('Location: ../index.php');
+	endif;
+endif;
+?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
