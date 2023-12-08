@@ -111,11 +111,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cadastroModalLabel">Login</h5>
+                    <h5 class="modal-title" id="cadastroModalLabel">Cadastro</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Adicione os campos de login aqui -->
                     <form>
                         <div class="mb-3">
                             <label for="username" class="form-label">Nome:</label>
@@ -129,7 +128,7 @@
                             <label for="password" class="form-label">Senha:</label>
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>
                 </div>
             </div>
