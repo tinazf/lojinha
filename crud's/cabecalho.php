@@ -13,10 +13,10 @@
                         <p class="nav-link welcome-msg">Bem-vindo, <span id="username">Visitante</span></p>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle='modal' data-bs-target='#loginModal'>Login</a>
+                        <a class="nav-link" data-bs-toggle='modal' data-bs-target='#loginModal'>Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle='modal' data-bs-target='#cadastroModal'>Cadastro</a>
+                        <a class="nav-link" href="js/produtos.php" data-bs-toggle='modal' data-bs-target='#cadastroModal'>Cadastro</a>
                     </li>
 
                 </ul>
@@ -59,7 +59,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="cadastrar.php">
+                    <form action="js/produtos.php">
                         <div class="mb-3">
                             <label for="username" class="form-label">Nome:</label>
                             <input type="text" class="form-control" id="username" name="username">

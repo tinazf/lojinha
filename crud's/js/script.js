@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     // Carregar lista de usuario ao carregar a página
     carregarusuario();
 
@@ -9,7 +10,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'POST',
-            url: 'usuario.php',
+            url: 'cabecalho.php',
             data: formData,
             success: function (response) {
                 alert(response.message);
@@ -17,7 +18,7 @@ $(document).ready(function () {
             },
             error: function (error) {
                 console.log(error);
-                alert('Erro ao inserir o produto.');
+                alert('Erro ao inserir usuario.');
             }
         });
     });

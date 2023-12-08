@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +36,8 @@
             border-radius: 5px;
         }
 
-        .navbar-brand, .navbar-text {
+        .navbar-brand,
+        .navbar-text {
             color: #ffffff;
         }
 
@@ -53,29 +55,10 @@
         }
     </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Lojinha</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <p class="nav-link welcome-msg">Bem-vindo, <span id="username">Visitante</span></p>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle='modal' data-bs-target='#loginModal'>Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle='modal' data-bs-target='#cadastroModal'>Cadastro</a>
-                    </li>
 
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body>
+    <?php
+    include_once('cabecalho.php'); ?>
 
     <!-- Modal de Login -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -118,12 +101,8 @@
                             <input type="text" class="form-control" id="nome_usuario" name="nome_usuario">
                         </div>
                         <div class="mb-3">
-                            <label for="numero_usuario" class="form-label">Numero:</label>
-                            <input type="number" class="form-control" id="numero_usuario" name="numero_usuario">
-                        </div>
-                        <div class="mb-3">
                             <label for="email_usuario" class="form-label">Email:</label>
-                            <input type="text" class="form-control" id="email_usuario" name="email_usuario">
+                            <input type="email" class="form-control" id="email_usuario" name="email_usuario">
                         </div>
                         <div class="mb-3">
                             <label for="senha_usuario" class="form-label">Senha:</label>
@@ -151,26 +130,26 @@
             <a href="createcat.php" class="btn btn-success">Inserir Categoria</a>
         </div>
     </div>
-<?php
-include_once('conexao.php');
+    <?php
+    include_once('conexao.php');
     if (isset($_POST['btn-cadastrar'])) :
-	$nome_usuario = $_POST['nome_usuario'];
-	$numero_usuario = $_POST['numero_usuario'];
-    $email_usuario = $_POST['email_usuario'];
-	$senha = $_POST['senha'];
+        $nome_usuario = $_POST['nome'];
+        $email_usuario = $_POST['email'];
+        $senha = $_POST['senha'];
 
-	$sql = "INSERT INTO usuarios (nome_usuario, email, cpf, senha) 
+        $sql = "INSERT INTO usuarios (nome, email, cpf, senha) 
     VALUES ('$nome_usuario', '$email','$cpf','$senha')";
 
-	if (mysqli_query($connect, $sql)) :
-		$_SESSION['mensagem'] = "Cadastrado com sucesso!";
-		header('Location: ../sessao/login.php');
-	else :
-		$_SESSION['mensagem'] = "Erro ao cadastrar";
-		header('Location: ../index.php');
-	endif;
-endif;
-?>
+        if (mysqli_query($connect, $sql)) :
+            $_SESSION['mensagem'] = "Cadastrado com sucesso!";
+            header('Location: ../sessao/login.php');
+        else :
+            $_SESSION['mensagem'] = "Erro ao cadastrar";
+            header('Location: ../index.php');
+        endif;
+    endif;
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
